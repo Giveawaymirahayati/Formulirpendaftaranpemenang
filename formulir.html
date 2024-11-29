@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Giveaway Mirahayati</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      padding: 0;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+    h1 {
+      color: #007BFF;
+      text-align: center;
+    }
+    form {
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      max-width: 400px;
+      margin: 0 auto;
+    }
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+    button {
+      background: #007BFF;
+      color: #fff;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      width: 100%;
+    }
+    button:hover {
+      background: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <h1>Giveaway Mirahayati</h1>
+  <p style="text-align:center;">Selamat Anda terpilih sebagai pemenang giveaway! Silakan isi data berikut untuk mengklaim hadiah Anda.</p>
+  <form id="giveawayForm">
+    <label for="name">Nama Lengkap:</label>
+    <input type="text" id="name" name="name" placeholder="Masukkan nama lengkap Anda" required>
+    
+    <label for="account">Nomor Rekening:</label>
+    <input type="text" id="account" name="account" placeholder="Masukkan nomor rekening Anda" required>
+    
+    <label for="bank">Nama Bank:</label>
+    <input type="text" id="bank" name="bank" placeholder="Masukkan nama bank Anda" required>
+    
+    <label for="accountName">Nama Pemilik Rekening:</label>
+    <input type="text" id="accountName" name="accountName" placeholder="Masukkan nama pemilik rekening" required>
+    
+    <label for="phone">Nomor WhatsApp:</label>
+    <input type="text" id="phone" name="phone" placeholder="Masukkan nomor WhatsApp Anda" required>
+    
+    <button type="button" id="sendButton">Kirim ke WhatsApp</button>
+  </form>
+
+  <script>
+    document.getElementById('sendButton').onclick = function () {
+      const name = document.getElementById('name').value;
+      const account = document.getElementById('account').value;
+      const bank = document.getElementById('bank').value;
+      const accountName = document.getElementById('accountName').value;
+      const phone = document.getElementById('phone').value;
+
+      const whatsappNumber = "6285167097051"; // Nomor WhatsApp Business Anda
+      const message = `Halo Admin Mirahayati, saya telah mengisi data giveaway. Berikut data saya:%0A` +
+                      `Nama Lengkap: ${name}%0A` +
+                      `Nomor Rekening: ${account}%0A` +
+                      `Nama Bank: ${bank}%0A` +
+                      `Nama Pemilik Rekening: ${accountName}%0A` +
+                      `Nomor WhatsApp: ${phone}`;
+
+      const whatsappURL = `https://wa.me/${whatsappNumber}?text=${message}`;
+      window.open(whatsappURL, '_blank');
+    };
+  </script>
+</body>
+</html>
